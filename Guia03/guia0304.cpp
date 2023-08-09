@@ -1,6 +1,6 @@
 /*
 Guia0304 - v0.0. - 08 / 08 / 2023
-Author: Vinicius Miranda de Araujo
+Author: Caio Faria Diniz
 Para compilar em uma janela de comandos (terminal):
 No Linux : g++ -o Guia0304 ./Guia0304.cpp
 No Windows: g++ -o Guia0304 Guia0304.cpp
