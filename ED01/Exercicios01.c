@@ -148,43 +148,153 @@ void exercicio0112()
  printf("O perimetro e a area do quadrado tendo os novos lados e de: %d %d\n", perimetro, area);
 
 }
+
 void exercicio0113()
 {
+int L1, L2, area;
 
+printf("Digite dois lados de um retangulo: \n");
+scanf("%d %d", &L1, &L2);
+
+area = L1 * L2;
+printf("\nO valor da area normal e de : %d\n", area);
+
+area = area * 4;
+printf("\nO valor da area quatro vezes maior e de: %d\n", area);
 }
+
 void exercicio0114()
 {
+int L1,ladoN1, L2, ladoN2, area, perimetro;
 
+printf("Digite dois lados de um retangulo: \n");
+scanf("%d %d", &L1, &L2);
+ ladoN1 = L1/5;
+ ladoN2 = L2/5;
+
+ area = ladoN1 * ladoN2;
+printf("\nO valor da area e de : %d\n", area);
+
+perimetro = ladoN1+ladoN2+ladoN1+ladoN2;
+printf("\nO valor do perimetro e de : %d\n", perimetro);
 }
+
 void exercicio0115()
 {
+int Base, Altura, area, NovaAlt;
+printf("Digite a base do triangulo: \n");
+scanf("%d", &Base);
+printf("Digite a altura do triangulo: \n");
+scanf("%d", &Altura);
+
+NovaAlt = Altura/2;
+
+area = (Base*NovaAlt)/2;
+printf("A area do trinagulo com a altura pela metade e de: %d\n", area);
 
 }
+
 void exercicio0116()
 {
 
+double lado = 0.0, ladoNovo = 0.0, area = 0.0, perimetro = 0.0, altura = 0.0;
+
+    printf( "Insira o valor do lado de um triangulo equilatero: " );
+    scanf( "%lf" , &lado );
+    getchar();
+    printf( "\n" );
+
+    ladoNovo = 2 * lado;
+
+    altura = ( ladoNovo * sqrt(3) )/2;
+
+    area = ( pow(ladoNovo,2) * sqrt(3) )/4;
+    
+    perimetro = ladoNovo * 3;
+
+    printf( "A altura, area e o perimetro do triangulo com o dobro do lado: altura = %lf, area = %lf, perimetro = %lf\n" , altura , area , perimetro );
+
+
 }
+
 void exercicio0117()
 {
+float lado, volume;
+printf("Digite o tamanho da aresta do cubo(lado): \n");
+scanf("%f", &lado);
 
+volume = 3 * (pow ( (lado * 3), 3 ) );
+
+ printf( "O volume de um cubo com 7x a medida do lado: %.2f\n" , volume );
 }
+
 void exercicio0118()
 {
+float comprimento, largura, altura, volume;
+printf("Digite o valor do comprimento de um paralelepipedo: \n");
+scanf("%f", &comprimento);
+printf("Digite o valor da largura de um paralelepipedo: \n");
+scanf("%f", &largura);
+printf("Digite o valor da altura de um paralelepipedo: \n");
+scanf("%f", &altura);
+
+volume = ((comprimento/6 )* (largura/6) * (altura/6));
+printf("O valor do volume de um paralelepipedo com 1/6 dos valores e de: %f\n", volume);
 
 }
+
 void exercicio0119()
 {
+double raio = 0.0, area = 0.0;
+
+    printf( "Insira o valor do raio de um circulo: " );
+    scanf( "%lf" , &raio );
+    getchar();
+    printf( "\n" );
+
+    area = ( PI * ( ( pow( raio,2 ) / 2 ) ) ) / 2;
+
+    printf( "A area de um semicirculo com metade do raio e: %lf\n" , area );
 
 }
+
 void exercicio0120()
 {
+float raio, volume;
+printf("Digite o valor do raio de uma esfera: \n");
+scanf("%f", &raio);
+
+volume = PI * pow(((3*raio)/8),3) * 4/3;
+printf( "O volume de uma esfera com 3/8 do raio e: %f\n" , volume );
 
 }
+
 void exercicio01E1()
 {
+float area , raio ;
 
+    printf( "Insira o valor da area de uma circunferencia: " );
+    scanf( "%f" , &area );
+
+    raio = sqrt( (area / 3 ) / PI );
+
+    printf( "O raio de uma circunferencia com 1/3 dessa area e: %f\n" , raio );
 }
+
 void exercicio01E2()
 {
+float volume , novoVolume , raio , area ;
 
+    printf( "Insira o valor do volume de uma esfera: " );
+    scanf( "%f" , &volume );
+    
+    novoVolume = ( 3 * volume ) / 4;
+
+    raio = cbrt( (novoVolume * 3 * PI) / 4 );
+
+    area = 4 * PI * pow( raio, 2 );
+
+    printf( "O raio de 3/4 do volume da esfera e: %f\n" , raio ); 
+
+    printf( "A area da superficie da esfera e: %f\n" , area ); 
 }
