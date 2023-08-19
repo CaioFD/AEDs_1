@@ -280,9 +280,217 @@ void exercicio0216()
     }
     
 }
-void exercicio0217() {}
-void exercicio0218() {}
-void exercicio0219() {}
-void exercicio0220() {}
-void exercicio02E1() {}
-void exercicio02E2() {}
+void exercicio0217() 
+{
+    int x = 0, y = 0;
+
+    printf( "Digite o primeiro numero: " );
+    scanf( "%d" , &x );
+    getchar();
+
+    printf( "Digite o segundo numero: " );
+    scanf( "%d" , &y );
+    getchar();
+    printf( "\n" );
+    
+    if( x % 2 != 0 )
+    {
+        if( x < 0 )
+        {
+            printf("O numero (%d) impar e negativo\n" , x );
+        }
+        else
+        {
+            printf("O numero (%d) impar e positivo\n" , x );
+        }
+    }
+    else
+    {
+        if( x < 0 )
+        {
+            printf("O numero (%d) par e negativo\n" , x );
+        }
+        else
+        {
+            printf("O numero (%d) par e positivo\n" , x );
+        }
+    }
+    
+    if( y % 2 == 0 )
+    {
+        if( y > 0 )
+        {
+            printf("O numero (%d) par e positivo\n" , y);
+        }
+        else
+        {
+            printf("O numero (%d) par e negativo\n" , y);
+        }
+    }
+    else
+    {
+        if( y > 0 )
+        {
+            printf("O numero (%d) impar e positivo\n" , y);
+        }
+        else
+        {
+            printf("O numero (%d) impar e negativo\n" , y);
+        }
+    }
+
+}
+void exercicio0218() 
+{
+     double x = 0, y = 0;
+
+    printf( "Digite o primeiro numero: " );
+    scanf( "%lf" , &x );
+    getchar();
+
+    printf( "Digite o segundo numero: " );
+    scanf( "%lf" , &y );
+    getchar();
+    printf( "\n" );
+
+    if( ( y < x ) || ( y == x ) || ( y > (2 * x) ) )
+    {
+        if( y < x )
+            printf( "(%lf) e menor que (%lf)\n" , y , x );
+        else if( y == x )
+            printf( "(%lf) e igual a (%lf)\n" , y , x );
+        else
+            printf( "(%lf) e maior que o dobro de (%lf)\n" , y , x );
+    }
+}
+void exercicio0219()  
+{
+    double x = 0, y = 0, z = 0;
+
+    printf( "Digite o primeiro numero: " );
+    scanf( "%lf" , &x );
+    getchar();
+
+    printf( "Digite o segundo numero: " );
+    scanf( "%lf" , &y );
+    getchar();
+
+    printf( "Digite o terceiro numero: " );
+    scanf( "%lf" , &z );
+    getchar();
+    printf( "\n" );
+
+    if( x != y)
+    {
+        if( (x < z) && (z < y) )
+        {
+            printf( "(%lf) esta entre (%lf) e (%lf)\n" , z , x , y );
+        } else
+        {
+            printf( "(%lf) nao esta entre (%lf) e (%lf)\n" , z , x , y );
+        }
+    } else
+    {
+        printf( "(%lf) e (%lf) sao iguais logo (%lf) nao esta entre esses valores\n" , x , y , z );
+    }
+    
+}
+void exercicio0220() 
+{
+    double x = 0, y = 0, z = 0;
+
+    printf( "Digite o primeiro numero: " );
+    scanf( "%lf" , &x );
+    getchar();
+
+    printf( "Digite o segundo numero: " );
+    scanf( "%lf" , &y );
+    getchar();
+
+    printf( "Digite o terceiro numero: " );
+    scanf( "%lf" , &z );
+    getchar();
+    printf( "\n" );
+
+    if( (x != y) && (x != z) && (z!=y) )
+    {
+        if( !( (x < z) && (z < y) ) )
+        {
+            printf( "(%lf) nao esta entre (%lf) e (%lf)\n" , z , x , y );
+        } 
+        else
+        {
+            printf( "(%lf) esta entre (%lf) e (%lf)\n" , z , x , y );
+        }
+    } 
+    else
+    {
+        if( (x == y) || (y == z) )
+            printf( "Dois numeros sao iguais\n" );
+    }
+}
+void exercicio02E1() 
+{
+    char a, b, c;
+
+    printf( "Digite o primeiro caracter: " );
+    scanf( "%c" , &a );
+    getchar();
+
+    printf( "Digite o segundo caracter: " );
+    scanf( "%c" , &b );
+    getchar();
+
+    printf( "Digite o terceiro caracter: " );
+    scanf( "%c" , &c );
+    getchar();
+    printf( "\n" );
+
+    if( (a == b) || (a == c) )
+    {
+        printf( "O primeiro caracter e igual a outro\n" );
+    }
+    else
+    {
+        if( ( (b < a) && (a < c) ) || ( (b > a) && ( a > c) ) )
+        {
+            printf("O caracter (%c) esta entre (%c) e (%c)\n" , a , b , c );
+        } else
+        {
+            printf( "O caracter (%c) nao esta entre (%c) e (%c)\n" , a , b , c );
+        }
+    } 
+}
+void exercicio02E2() 
+{
+    char a, b, c;
+
+    printf( "Digite o primeiro caracter: " );
+    scanf( "%c" , &a );
+    getchar();
+
+    printf( "Digite o segundo caracter: " );
+    scanf( "%c" , &b );
+    getchar();
+
+    printf( "Digite o terceiro caracter: " );
+    scanf( "%c" , &c );
+    getchar();
+    printf( "\n" );
+
+    if( b != c )
+    {
+        if( !( ( (b < a) && (a < c) ) || ( (b > a) && ( a > c) ) ) )
+        {
+            printf("O caracter (%c) esta fora do intervalo ( %c : %c )\n" , a , b , c );
+        } else
+        {
+            printf( "O caracter (%c) esta dentro do intervalo ( %c : %c )\n" , a , b , c );
+        }
+    }
+    else
+    {
+        printf( "Ha dois caracteres iguais\n" );
+    }
+
+}
