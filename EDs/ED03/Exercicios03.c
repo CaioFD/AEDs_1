@@ -160,7 +160,24 @@ void exercicio0311()
     }
     printf("\n");
 }
-void exercicio0312(){}
+void exercicio0312()
+{
+    char palavra[50];
+    int cont = 0;
+    printf("Digite uma palavra: \n");
+    scanf("%s", palavra);
+
+    printf("A quantidade de letras maiusculas na palavra e de: \n");
+    for (int i = 0; i < palavra; i++)
+    {
+       if (isupper(palavra[i])) {
+            printf("%c ", palavra[i]);
+            cont++;
+        }
+        printf("A quantidade de letras maiusculas na palavra e de: %d\n",cont);
+    }
+    
+}
 void exercicio0313(){}
 void exercicio0314(){}
 void exercicio0315(){}
