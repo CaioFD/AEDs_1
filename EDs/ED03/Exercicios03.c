@@ -1,13 +1,13 @@
 /*
- Exercicios02 - v0.0. - 21/ 08 / 2023
+ Exercicios03 - v0.0. - 23 / 08 / 2023
  Author: Caio Faria Diniz
 
  Para compilar em terminal (janela de comandos):
- Linux : gcc -o Exercicios02 Exercicios02.c
- Windows: gcc -o Exercicios02 Exercicios02.c
+ Linux : gcc -o Exercicios03 Exercicios03.c
+ Windows: gcc -o Exercicios03 Exercicios03.c
  Para executar em terminal (janela de comandos):
- Linux : ./Exercicios02
- Windows: Exercicios02
+ Linux : ./Exercicios03
+ Windows: Exercicios03
 */
 
 // dependencias
@@ -16,6 +16,9 @@
 #include <math.h>
 #include <string.h>
 #include <ctype.h>
+
+// declaracao de variaveis globais
+const int STR_SIZE = 80; // tamanho maximo da string
 
 // declaracao das funcoes secundarias
 void identificacao();
@@ -34,84 +37,57 @@ void exercicio03E1();
 void exercicio03E2();
 
 // funcao principal
-int main(void)
+int main (void)
 {
     int opcao = 0;
     // mostrar identificacao do autor e programa
     identificacao();
 
-    do
-    {
+    do{
         // mostrar menu de opcoes
         menuOpcoes();
 
         // ler opcao do teclado
         printf("\n Opcao = ");
-        scanf("%d", &opcao);
+        scanf( "%d" , &opcao );
         getchar(); // limpar entrada de dados
 
         // estetica
-        printf("\n======== Opcao %d ========\n", opcao);
+        printf( "\n======== Opcao %d ========\n", opcao );
 
         // executar a opcao escolhida
         switch (opcao)
         {
-        case 0:
-            break;
-        case 1:
-            exercicio0311();
-            break;
-        case 2:
-            exercicio0312();
-            break;
-        case 3:
-            exercicio0313();
-            break;
-        case 4:
-            exercicio0314();
-            break;
-        case 5:
-            exercicio0315();
-            break;
-        case 6:
-            exercicio0316();
-            break;
-        case 7:
-            exercicio0317();
-            break;
-        case 8:
-            exercicio0318();
-            break;
-        case 9:
-            exercicio0319();
-            break;
-        case 10:
-            exercicio0320();
-            break;
-        case 11:
-            exercicio03E1();
-            break;
-        case 12:
-            exercicio03E2();
-            break;
+        case  0:                  break;
+        case  1: exercicio0311(); break;
+        case  2: exercicio0312(); break;
+        case  3: exercicio0313(); break;
+        case  4: exercicio0314(); break;
+        case  5: exercicio0315(); break;
+        case  6: exercicio0316(); break;
+        case  7: exercicio0317(); break;
+        case  8: exercicio0318(); break;
+        case  9: exercicio0319(); break;
+        case 10: exercicio0320(); break;
+        case 11: exercicio03E1(); break;
+        case 12: exercicio03E2(); break;
         default:
-            printf("\nERRO: OPCAO INVALIDA\n\n");
+            printf( "\nERRO: OPCAO INVALIDA\n\n" );
             break;
         } // fim switch
 
         // estetica
-        if (opcao == 0)
-        {
+        if( opcao == 0 ){
             printf("\n     Programa Encerrado     \n\n");
         }
 
         // estetica
-        printf("====== Fim Opcao %d ======\n\n", opcao);
+        printf( "====== Fim Opcao %d ======\n\n", opcao );
 
-    } while (opcao != 0);
+    }while (opcao != 0);
 
     // encerrar
-    printf("\nAperte ENTER para terminar!\n");
+    printf( "\nAperte ENTER para terminar!\n" );
     getchar();
 
     return (0);
@@ -147,44 +123,432 @@ void menuOpcoes()
 
 void exercicio0311()
 {
-    char palavra[50];
-    printf("Digite uma palavra: \n");
-    scanf("%s", palavra);
+    // identificacao
+    printf( "\nExercicio 0311:\n\n" );
 
-    printf("Letras maiusculas na palavra:  \n");
-    for (int i = 0; i < palavra[i] != '\0'; i++)
+    // programa
+    char palavra [STR_SIZE];
+    int i = 0, tam = 0;
+
+    printf( "Digite uma palavra: " );
+    scanf( "%s" , palavra);
+    getchar();
+    printf( "\n" );
+
+    tam = strlen(palavra);
+
+    for( i = 0; i < tam; i++ )
     {
-        if (isupper(palavra[i])) {
-            printf("%c ", palavra[i]);
+        if( ( 64 < palavra[i]) && (palavra[i] < 91) )
+        {
+            printf( "O caracter (%c) e MAIUSCULO\n" , palavra[i] );
+        }
+        else
+        {
+            printf( "O caracter (%c) e minusculo\n" , palavra[i] );
         }
     }
-    printf("\n");
-}
+
+    // encerrar
+    printf( "\nAperte ENTER para continuar!\n" );
+    getchar();
+} // fim exercicio0311
+
 void exercicio0312()
 {
-    char palavra[50];
-    int cont = 0;
-    printf("Digite uma palavra: \n");
-    scanf("%s", palavra);
+    // identificacao
+    printf( "\nExercicio 0312:\n\n" );
 
-    printf("A quantidade de letras maiusculas na palavra e de: \n");
-    for (int i = 0; i < palavra; i++)
+    // programa
+    char palavra [STR_SIZE];
+    int i = 0, count = 0, tam = 0;
+
+    printf( "Digite uma palavra: " );
+    scanf( "%s" , palavra);
+    getchar();
+    printf( "\n" );
+
+    tam = strlen(palavra);
+
+    for( i = 0; i < tam; i++ )
     {
-       if (isupper(palavra[i])) {
-            printf("%c ", palavra[i]);
-            cont++;
+        if( (palavra[i] > 64) && (palavra[i] < 91) )
+        {
+            printf( "O caracter (%c) e MAIUSCULO\n" , palavra[i] );
+            count++;
         }
-        printf("A quantidade de letras maiusculas na palavra e de: %d\n",cont);
     }
+
+    printf( "\nHa em \"%s\" %d caracteres maiusculos\n", palavra, count );
+
+    // encerrar
+    printf( "\nAperte ENTER para continuar!\n" );
+    getchar();
+} // fim exercicio0312
+
+void exercicio0313()
+{
+    // identificacao
+    printf( "\nExercicio 0313:\n\n" );
+
+    // programa
+    char palavra [STR_SIZE];
+    int i = 0, count = 0, tamanho = 0;
+
+    printf( "Digite uma palavra: " );
+    scanf( "%s" , palavra);
+    getchar();
+    printf( "\n" );
+
+    tamanho = strlen(palavra);
+
+    for( i = tamanho - 1; i >= 0; i=i-1 ) // for( int i = tamanho; tamanho >= 0; i=i-1)
+    {
+        if( ('A' <= palavra[i]) && (palavra[i] <= 'Z') )
+        {
+            printf( "O caracter (%c) e MAIUSCULO\n" , palavra[i] );
+            count++;
+        }
+        else
+        {
+            printf( "O caracter (%c) e minusculo\n" , palavra[i] );
+        }
+    }
+
+    printf( "\nHa em \"%s\" %d caracteres maiusculos\n", palavra, count );
+
+    // encerrar
+    printf( "\nAperte ENTER para continuar!\n" );
+    getchar();
+} // fim exercicio0313
+
+void exercicio0314()
+{
+    // identificacao
+    printf( "\nExercicio 0314:\n\n" );
+
+    // programa
+    char palavra [STR_SIZE];
+    int i = 0, count = 0, tamanho = 0;
+
+    printf( "Digite uma palavra: " );
+    scanf( "%s" , palavra);
+    getchar();
+    printf( "\n" );
+
+    tamanho = strlen(palavra);
     
-}
-void exercicio0313(){}
-void exercicio0314(){}
-void exercicio0315(){}
-void exercicio0316(){}
-void exercicio0317(){}
-void exercicio0318(){}
-void exercicio0319(){}
-void exercicio0320(){}
-void exercicio03E1(){}
-void exercicio03E2(){}
+    for( i = 0; i < tamanho; i=i+1 )
+    {
+            if( isalpha(palavra[i] ) ) 
+               {
+                   if( islower(palavra[i]) )
+                   {
+                       printf( "O caracter (%c) e minusculo\n" , palavra[i] );
+                   }
+                   else
+                   {
+                       printf( "O caracter (%c) e MAIUSCULO\n" , palavra[i] );
+                   }
+                   count++;
+               }
+               else
+               {
+                   printf( "O caracter (%c) e um simbolo\n" , palavra[i] );
+               }      
+    }
+
+    printf( "\nEm \"%s\" %d caracteres sao letras\n", palavra, count );
+    // isalpha => if( ('A' <= palavra[i] && palavra[i] <= 'Z') || ('a' <= palavra[i] && palavra[i] <= 'z')) 
+    // islower => if( 'a' <= palavra[i] && palavra[i] <= 'z' )
+    // encerrar
+    printf( "\nAperte ENTER para continuar!\n" );
+    getchar();
+} // fim exercicio0314
+
+void exercicio0315()
+{
+    // identificacao
+    printf( "\nExercicio 0315:\n\n" );
+
+    // programa
+    char palavra [STR_SIZE];
+    int i = 0, count = 0, tamanho = 0;
+
+    printf( "Digite uma palavra: " );
+    scanf( "%s" , palavra);
+    getchar();
+    printf( "\n" );
+
+    tamanho = strlen(palavra);
+    
+    for( i = tamanho - 1; i >= 0; i=i-1 ) 
+    {
+        if( isdigit(palavra[i]) ) // isdigit => if( '0' <= palavra[i] && palavra[i] <= '9' )
+        {
+            printf( "O caracter (%c) e um digito\n" , palavra[i] );
+            count++;
+        }
+    }
+
+    printf( "\nEm \"%s\" %d caracteres sao digitos\n", palavra, count );
+    // isdigit => if( '0' <= palavra[i] && palavra[i] <= '9' )
+    // encerrar
+    printf( "\nAperte ENTER para continuar!\n" );
+    getchar();
+} // fim exercicio0315
+
+void exercicio0316()
+{
+    // identificacao
+    printf( "\nExercicio 0316:\n\n" );
+
+    // programa
+    char palavra [STR_SIZE];
+    int i = 0, count = 0, tamanho = 0;
+
+    printf( "Digite uma palavra: " );
+    scanf( "%s" , palavra);
+    getchar();
+    printf( "\n" );
+
+    tamanho = strlen(palavra);
+    
+    for( i = tamanho - 1; i >= 0; i=i-1 ) 
+    {
+        if( !( isdigit(palavra[i]) || isalpha(palavra[i]) ) )
+        {
+            printf( "O caracter (%c) nao e digito nem letra\n" , palavra[i] );
+            count++;
+        }
+    }
+
+    printf( "\nEm \"%s\" %d caracteres nao sao digitos nem letras\n", palavra, count );
+    // isdigit => if( '0' <= palavra[i] && palavra[i] <= '9' )
+    // encerrar
+    printf( "\nAperte ENTER para continuar!\n" );
+    getchar();
+} // fim exercicio0316
+
+void exercicio0317()
+{
+    // identificacao
+    printf( "\nExercicio 0317:\n\n" );
+
+    // programa
+    int a = 0, b = 0, n = 0, i = 0;
+    int count = 0;
+
+    printf( "Insira o primeiro valor do intervalo: " );
+    scanf( "%d" , &a ); 
+    getchar();
+
+    printf( "Insira o valor final do intervalo: " );
+    scanf( "%d" , &b ); 
+    getchar();
+
+    printf( "Insira a quantidade de valores: " );
+    scanf( "%d" , &n );
+    getchar();
+    printf( "\n" );
+
+    int x[n]; // vetor
+    for( i = 0; i < n; i=i+1 )
+    {
+        printf( "Digite o valor: " );
+        scanf( "%d" , &x[i] );
+        getchar();
+    }
+    printf( "\n" );
+    for( i = 0; i < n; i++ )
+    {
+        if( (x[i] % 5 == 0) && (a <= x[i] && x[i] <= b) )
+        {
+            printf( "O numero (%d) e multiplo de 5 e esta dento do intervalo [ %d : %d ]\n" , x[i], a, b );
+            count++;
+        }
+    }
+
+    printf( "\n(%d) valores sao multiplos de 5 e pertecema ao intervalo\n", count );
+
+    // encerrar
+    printf( "\nAperte ENTER para continuar!\n" );
+    getchar();
+} // fim exercicio0317
+
+void exercicio0318()
+{
+    // identificacao
+    printf( "\nExercicio 0318:\n\n" );
+
+    // programa
+    int a = 0, b = 0, n = 0, i = 0;
+    int count = 0;
+
+    printf( "Insira o primeiro valor do intervalo: " );
+    scanf( "%d" , &a ); 
+    getchar();
+
+    printf( "Insira o valor final do intervalo: " );
+    scanf( "%d" , &b ); 
+    getchar();
+
+    printf( "Insira a quantidade de valores: " );
+    scanf( "%d" , &n );
+    getchar();
+    printf( "\n" );
+
+    int x[n]; // vetor
+
+    for( i = 0; i < n; i=i+1 )
+    {
+        printf( "Digite o valor: " );
+        scanf( "%d" , &x[i] );
+        getchar();
+    }
+    printf( "\n" );
+    for( i = 0; i < n; i++ )
+    {
+        if( (x[i] % 3 == 0) && !(x[i] % 5 == 0) && (a <= x[i] && x[i] <= b) )
+        {
+            printf( "O numero (%d) e multiplo de 3, nao e multiplo de 5 e esta dento do intervalo [ %d : %d ]\n" , x[i], a, b );
+            count++;
+        }
+    }
+    printf( "\n(%d) valores sao multiplos de 3, nao sao multiplos de 5 e pertecema ao intervalo\n", count );
+    // encerrar
+    printf( "\nAperte ENTER para continuar!\n" );
+    getchar();
+} // fim exercicio0318
+
+void exercicio0319()
+{
+    // identificacao
+    printf( "\nExercicio 0319:\n\n" );
+
+    // programa
+    double a = 0, b = 0;
+    int n = 0, i = 0, count = 0;
+    
+    printf( "Insira o primeiro valor do intervalo: " );
+    scanf( "%lf" , &a ); 
+    getchar();
+
+    printf( "Insira o valor final do intervalo: " );
+    scanf( "%lf" , &b ); 
+    getchar();
+
+    if( a >= b )
+    {
+        printf( "\nERRO: A valor inicial o intervalo e maior que o valor final!\n" );
+    }
+    else
+    {
+        printf( "Insira a quantidade de valores: " );
+        scanf( "%d" , &n );
+        getchar();
+        printf( "\n" );
+
+        double x[n];
+
+        for( i = 0; i < n; i=i+1 )
+        {
+            printf( "Digite o valor: " );
+            scanf( "%lf" , &x[i] );
+            getchar();
+        }
+        for ( i = 0; i < n; i++)
+        {
+            if( ( (int)x[i]%2 == 1 ) && ( a < x[i] && x[i] < b ) )
+            {
+                printf( "(%lf) e impar e pertece ao intervalo\n" , x[i] );
+            }
+            count++;
+        }
+        
+        printf( "\n%d valores sao impares e pertencem ao intervalo\n" , count );
+    }
+
+    // encerrar
+    printf( "\nAperte ENTER para continuar!\n" );
+    getchar();
+} // fim exercicio0319
+
+void exercicio0320()
+{
+    // identificacao
+    printf( "\nExercicio 0320:\n\n" );
+
+    // programa
+    double a = 0, b = 0;
+    int i = 0, n = 0, count = 0;
+
+    printf( "Insira o primeiro valor do intervalo: " );
+    scanf( "%lf" , &a ); 
+    getchar();
+
+    printf( "Insira o valor final do intervalo: " );
+    scanf( "%lf" , &b ); 
+    getchar();
+
+
+    if( !( (0 < a && a < 1) && (0 < b && b < 1) ) )
+    {
+        printf( "ERRO: O valor e inicial e final nao sao maiores que 0 e menores que 1" );
+    }
+    else
+    {
+        printf( "Insira a quantidade de valores: " );
+        scanf( "%d" , &n );
+        getchar();
+        printf( "\n" );
+
+        double x[n];
+
+        for( i = 0; i < n; i=i+1 )
+        {
+            printf( "Digite o valor: " );
+            scanf( "%lf" , &x[i] );
+            getchar();
+        } 
+
+        for ( i = 0; i < n; i++)
+        {
+            if( !( a < x[i] && x[i] < b ) )
+            {
+                printf( "(%lf) nao pertece ao intervalo\n" , x[i] );
+            }
+            count++;
+        }
+        
+        printf( "\n%d valores nao pertencem ao intervalo\n" , count );
+    }
+
+    // encerrar
+    printf( "\nAperte ENTER para continuar!\n" );
+    getchar();
+} // fim exercicio0320
+
+void exercicio03E1()
+{
+    // identificacao
+    printf( "\nExercicio 03E1:\n\n" );
+
+    // programa
+
+    // encerrar
+    printf( "\nAperte ENTER para continuar!\n" );
+    getchar();
+} // fim exercicio03E1
+
+void exercicio03E2()
+{
+    // identificacao
+    printf( "\nExercicio 03E2:\n\n" );
+
+    // programa
+
+    // encerrar
+    printf( "\nAperte ENTER para continuar!\n" );
+    getchar();
+} // fim exercicio03E2
