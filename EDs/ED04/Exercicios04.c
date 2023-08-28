@@ -142,3 +142,68 @@ void menuOpcoes()
   printf( "%s\n" , " 11 - Exercicio 04E1");
   printf( "%s\n" , " 12 - Exercicio 04E2");
 } // fim menuOpcoes()
+
+void exercicio0411()
+{
+  // identificacao
+  printf( "\n%s\n\n" , "Exercicio 0411:" );
+
+  // programa
+  double a = 0.0, b = 0.0;
+  int i = 0, n = 0, countD = 0, countF = 0;
+
+  printf( "Insira o valor inicial para o intervalo: " );
+  scanf( "%lf" , &a );
+  getchar();
+  
+  printf( "Insira o valor final para o intervalo: " );
+  scanf( "%lf" , &b );
+  getchar();
+
+  printf( "Insira a quantidade de valores dentro intervalo: " );
+  scanf( "%d" , &n );
+  getchar();
+  printf( "\n" );
+
+  double x[n];
+
+  for( i = 0; i < n; i++ )
+  {
+    printf( "%d: " , i+1 );
+    scanf( "%lf" , &x[i] );
+    getchar();
+  }
+
+  for( i = 0; i < n; i++)
+  {
+    if( a <= x[i] && x[i] <= b )
+    {
+      countD++;
+    }   // end if
+    else
+    {
+      if( x[i] < a || b < x[i] )
+      {
+        countF++;
+      } // end if
+    }   // end else
+  }     // end for
+
+  printf( "\n(%d) valores estao dentro do intervalo e (%d) estao fora\n" , countD, countF );
+
+  // encerrar
+  printf( "\n%s\n" , "Aperte ENTER para continuar!" );
+  getchar();
+} // fim exercicio0411
+
+void exercicio0412(){}
+void exercicio0413(){}
+void exercicio0414(){}
+void exercicio0415(){}
+void exercicio0416(){}
+void exercicio0417(){}
+void exercicio0418(){}
+void exercicio0419(){}
+void exercicio0420(){}
+void exercicio04E1(){}
+void exercicio04E2(){}
