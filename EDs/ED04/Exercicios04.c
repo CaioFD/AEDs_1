@@ -196,7 +196,34 @@ void exercicio0411()
   getchar();
 } // fim exercicio0411
 
-void exercicio0412(){}
+void exercicio0412()
+{
+     // identificacao
+  printf( "\n%s\n\n" , "Exercicio 0412:" );
+  // programa
+  char palavra[STR_SIZE];       
+  int i = 0, tam = 0, count = 0;
+
+  printf("Digite uma palavra: ");
+  scanf("%s", palavra);
+  getchar();
+
+  tam = strlen(palavra);
+  for (int i = 0; i < tam; i++)
+  {
+    if (isupper(palavra[i]))
+    {
+      if (palavra[i] > 'K' )
+      {
+            count++;
+      }
+    } 
+  }
+  
+printf(" \n(%d) letras maiusculas sao maiores que \'K\'\n ", count);
+printf("\n%s\n", "Aperte ENTER para continuar! ");
+getchar();
+}
 void exercicio0413(){}
 void exercicio0414(){}
 void exercicio0415(){}
