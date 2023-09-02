@@ -224,7 +224,21 @@ printf(" \n(%d) letras maiusculas sao maiores que \'K\'\n ", count);
 printf("\n%s\n", "Aperte ENTER para continuar! ");
 getchar();
 }
-void exercicio0413(){}
+void exercicio0413()
+{
+   printf( "\n%s\n\n" , "Exercicio 0413:" );
+   char palavra[STR_SIZE];  
+   printf("Digite uma palavra: \n");
+   scanf("%s", palavra);  
+   getchar();
+
+   metodo0413(palavra);
+   printf("\n%s\n" , "Aperte ENTER para continuar!" );
+   getchar();
+   
+
+}
+
 void exercicio0414(){}
 void exercicio0415(){}
 void exercicio0416(){}
