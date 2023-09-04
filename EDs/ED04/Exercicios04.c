@@ -224,6 +224,28 @@ printf(" \n(%d) letras maiusculas sao maiores que \'K\'\n ", count);
 printf("\n%s\n", "Aperte ENTER para continuar! ");
 getchar();
 }
+
+
+
+void metodo0413(const char *text)
+{
+  int i = 0, count = 0;
+
+  int tamanho = strlen(text);
+
+  for ( i = 0; i < tamanho; i++)
+  {
+    if( isupper(text[i]) )
+    {
+      if( text[i] > 'K' )
+      {
+        count++;
+      } // end if
+    }   // end if
+  }     // end for
+  
+  printf( "\n(%d) letras maiusculas sao maiores do que \'K\'\n", count );
+}
 void exercicio0413()
 {
    printf( "\n%s\n\n" , "Exercicio 0413:" );
@@ -238,8 +260,39 @@ void exercicio0413()
    
 
 }
+void metodo0414(const char *text)
+{
+  int i = 0;
+  int tamanho = strlen(text);
+  printf( "\n%s\n\n", "Letras Maiusculas Maiores do que K:" );
 
-void exercicio0414(){}
+  for (int i = 0; i < tamanho; i++)
+  {
+    if (isupper(text[i]))
+    {
+      if (text[i] > 'K')
+      {
+        printf("%c\n", text[i]);
+      }
+      
+    }
+    
+  }
+  
+}
+void exercicio0414()
+{
+
+printf( "\n%s\n\n" , "Exercicio 0414:" );
+   char palavra[STR_SIZE];  
+   printf("Digite uma palavra: \n");
+   scanf("%s", palavra);  
+   getchar();
+
+   metodo0414(palavra);
+   printf("\n%s\n" , "Aperte ENTER para continuar!" );
+   getchar();
+}
 void exercicio0415(){}
 void exercicio0416(){}
 void exercicio0417(){}
